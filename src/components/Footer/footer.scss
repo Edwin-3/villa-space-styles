@@ -1,0 +1,130 @@
+@use '../styles.scss' as *;
+
+.footer-section {
+    min-height: 280px;
+    width: 100%;
+    background-color: $bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .flex-width {
+        max-width: 1200px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+
+
+        .items {
+            flex-basis: 28%;
+            min-height: 100%;
+            @include breakpoint(sm) {
+                flex-basis: 100%;
+
+            }
+
+        }
+
+        .col-1 {
+            @include breakpoint(sm) {
+                align-items: flex-start;
+                padding: $space-sm;
+            }
+
+            .logo {
+                width: 12rem;
+                height: 6rem;
+                background-image: url('../../../public/assets/Interior_Logo.svg');
+                background-position: center;
+                background-size: cover;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .text {
+                line-height: 1.5;
+                color: rgb(255, 255, 255, 0.4);
+            }
+
+            .socials {
+                display: flex;
+                flex-direction: row;
+                gap: $space-sm;
+                margin-top: $space-sm;
+
+                .icon {
+                    font-size: 0.875rem;
+                    width: fit-content;
+                    border: 1px solid rgb(255, 255, 255, 0.05);
+                    padding: 10px;
+                    color: $primary-color;
+
+                }
+            }
+        }
+
+        .col-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: $space-lg 0 $space-lg $space-lg;
+            gap: $space-md;
+
+            @include breakpoint(sm) {
+                align-items: flex-start;
+                padding: $space-sm;
+            }
+
+            .link-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: $space-md;
+
+                .links {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px
+                }
+            }
+        }
+
+        .col-3 {
+            display: flex;
+            flex-direction: column;
+            padding: $space-lg 0 $space-lg $space-lg;
+            gap: $space-sm;
+
+            @include breakpoint(sm) {
+                align-items: flex-start;
+                padding: $space-sm;
+
+            }
+
+            .contact-wrapper {
+                margin-top: $space-sm;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: $space-sm;
+
+                .contact-icon {
+                    font-size: 1.5rem;
+                    color: $primary-color;
+                }
+            }
+
+            .contact-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+
+            }
+        }
+    }
+}

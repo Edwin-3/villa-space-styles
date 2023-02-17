@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
+
+/* Define design principles */
+$primary-color: #C6A05F;
+$secondary-color: #4C4C4C;
+$bg-color: #333333;
+$secondary-bg-color: #E5E5E5;
+
+/* Color */
+.primary-bg {
+  background-color: $bg-color;
+
+}
+
+.secondary-bg {
+  background-color: $secondary-bg-color;
+}
+
+
+/* Spacing */
+$space-xs: 10px;
+$space-sm: 15px;
+$space-md: 30px;
+$space-lg: 45px;
+$space-xl: 60px;
+$space-xxl: 90px;
+$space-xxxl: 120px;
+
+
+
+
+/* Typography */
+$font-size: 16px;
+$line-height: 1.5;
+$font-family-01: 'Playfair Display', serif;
+$font-family-02: 'Lato', sans-serif;
+
+
+/* Breakpoint Variables */
+$breakpoint-sm: 700px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1440px;
+
+/* Media queries */
+@mixin breakpoint($point) {
+  @if $point ==sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+
+  @else if $point ==md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  }
+
+  @else if $point ==lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1.2;
+  font-weight: 600;
+  color: $primary-color;
+  font-family: $font-family-01;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include breakpoint(md) {
+    font-size: 3em;
+  }
+
+  ;
+
+  @include breakpoint(sm) {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  font-size: 2em;
+  line-height: $line-height;
+  font-weight: 600;
+  color: $secondary-bg-color;
+  font-family: $font-family-01;
+  margin: 0;
+  @include breakpoint(sm) {
+    font-size: 1.25em;
+  }
+}
+
+h3 {
+  font-size: 2em;
+  line-height: $line-height;
+  font-weight: 600;
+  color: $primary-color;
+  font-family: $font-family-02;
+  margin: 0;
+
+  @include breakpoint(sm) {
+    font-size: 1.5em;
+    color: $secondary-bg-color;
+  }
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: $line-height;
+  font-weight: 700;
+  font-family: $font-family-02;
+  color: $secondary-bg-color;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+h5 {
+  font-size: 1em;
+  line-height: $line-height;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  color: $primary-color;
+  font-family: $font-family-01;
+  margin: 0;
+  text-transform: uppercase;
+
+  @include breakpoint(sm) {
+    font-size: 0.75em;
+  }
+}
+
+h6 {
+  font-size: 1em;
+  line-height: $line-height;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  color: $secondary-color;
+  font-family: $font-family-02;
+  margin: 0;
+}
+
+p {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family-02;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  color: $secondary-bg-color;
+  margin: 0;
+  @include breakpoint(sm) {
+    font-size: 0.875em;
+  }
+
+}
+
+a {
+  text-decoration: none;
+  line-height: $line-height;
+  color: $secondary-bg-color;
+  font-weight: 300;
+  font-family: $font-family-02;
+  cursor: pointer;
+}
+
+
+
+/* Button component */
+.btn {
+  display: inline-block;
+  padding-inline: $space-lg;
+  padding-block: $space-sm;
+  border-radius: 5px;
+  color: $bg-color;
+  text-decoration: none;
+  font-family: $font-family-02;
+  font-weight: 600;
+  border: none;
+
+  &.primary {
+    background: linear-gradient(90deg, $primary-color 0%, #E0B56C 100%);
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
+
+
+
+/* Test and iterate */
+/* Test the button component with different screen sizes */
+.btn {
+  font-size: 1.5em;
+
+  @include breakpoint(sm) {
+    font-size: $font-size;
+    padding-inline: $space-xs;
+    width: 163px;
+  }
+
+  @include breakpoint(md) {
+    font-size: 1.2em;
+  }
+}

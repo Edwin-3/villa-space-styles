@@ -1,0 +1,66 @@
+@use '../styles.scss' as *;
+
+.tester-section {
+    padding: $space-xl 120px;
+    background-color: $bg-color;
+    overflow: hidden;
+
+    @include breakpoint(md) {
+        padding: $space-lg $space-xl;
+    }
+
+    @include breakpoint(sm) {
+        padding: $space-lg $space-sm;
+    }
+
+    .service-heading {
+        margin-bottom: $space-md;
+    }
+
+    .service-card-wrapper {
+        max-width: 1200px;
+        width: 1200px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        column-gap: $space-sm;
+        overflow-x: scroll;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+
+        @include breakpoint(md) {
+            overflow-x: scroll;
+            gap: $space-sm;
+        }
+
+        @include breakpoint(sm) {
+            width: 100%;
+            flex-direction: column;
+            gap: $space-sm;
+        }
+
+        .service-card {
+            padding: $space-lg $space-sm $space-md $space-md;
+            border: 1px solid $secondary-color;
+            border-radius: $space-sm;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+            @include breakpoint(sm) {
+                max-width: 345px;
+            }
+
+            .icon {
+                width: 26px;
+                height: 26px;
+                background-color: $secondary-color
+            }
+
+            h4 {
+                margin-block: $space-md $space-sm;
+            }
+
+        }
+    }
+}

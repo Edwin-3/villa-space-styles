@@ -1,0 +1,190 @@
+@use '../styles' as *;
+
+.section03-section {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: $space-xl 0 0 $space-xxxl;
+
+
+    @include breakpoint(md) {
+        align-items: flex-start;
+        padding-inline: $space-xl $space-md
+    }
+
+    @include breakpoint(sm) {
+        align-items: flex-start;
+        padding-inline: 0
+    }
+
+    .section03-heading {
+        text-align: left;
+
+        @include breakpoint(md) {
+            text-align: left;
+            padding-bottom: $space-sm
+        }
+
+        @include breakpoint(sm) {
+            padding-left: $space-sm ;
+        }
+    }
+
+    .section03-content {
+        position: relative;
+        margin-top: $space-md;
+        max-width: 1200px;
+        width: 100%;
+        height: 410px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8%;
+
+        @include breakpoint(sm) {
+            background-image: url('../../../public/assets/img01.jpg');
+            background-position: center;
+            background-size: cover;
+            align-items: flex-end;
+            justify-content: flex-start;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
+        }
+
+        @include breakpoint(md) {
+            flex-wrap: wrap;
+            gap: $space-md;
+            align-items: flex-end;
+        }
+
+        .image {
+            flex: 1 0 60%;
+            height: 100%;
+            max-width: 712px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: $space-xs;
+
+            }
+
+            @include breakpoint(sm) {
+                display: none;
+            }
+
+            @include breakpoint(md) {
+                min-width: 383px;
+                flex: 1 0 40%;
+            }
+        }
+
+        .section03-text {
+            flex: 1 0 30%;
+
+            @include breakpoint(sm) {
+                padding: $space-sm;
+                z-index: 3;
+                max-width: 350px;
+
+                p{
+                    display: none;
+                }
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 75%;
+                height: 5px;
+                border-radius: $space-xs;
+                background-color: $secondary-bg-color;
+                @include breakpoint (sm){
+
+                }
+            }
+
+            h3 {
+                margin-block: $space-sm;
+            }
+        }
+
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+            margin-inline-start: auto;
+
+            @include breakpoint (sm) {
+                text-align: right;
+            }
+
+            .section03-text{
+                @include breakpoint(sm){
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    p{
+                        display: none;
+                    }
+
+                }
+            }
+
+            img {
+                border-radius: $space-xs 0 0 $space-xs;
+            }
+
+        }
+
+
+    }
+
+    .section03-content-reverse {
+        margin-top: $space-md;
+        width: 1200px;
+        height: 410px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8%;
+        margin-inline-start: auto;
+
+        img {
+            flex: 1 0 60%;
+            height: 100%;
+            border-radius: $space-sm 0 0 $space-sm;
+        }
+
+        .section03-text {
+            flex: 1 0 32%;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 75%;
+                height: 5px;
+                border-radius: $space-md;
+                background-color: $secondary-bg-color;
+            }
+
+            h3 {
+                margin-block: $space-sm;
+            }
+        }
+    }
+}

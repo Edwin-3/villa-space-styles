@@ -1,0 +1,126 @@
+@use '../styles.scss' as *;
+
+.testimony-section {
+    padding: $space-xl $space-xxxl;
+    background: linear-gradient(270deg, #CCCCCC 0%, #999999 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include breakpoint (md) {
+        padding: $space-xl;
+        align-items: flex-start;
+
+    }
+
+    @include breakpoint (sm) {
+        padding: $space-md $space-sm;
+        align-items: flex-start;
+
+    }
+
+    .testimony-heading {
+        padding-bottom: $space-xl;
+        width: 100%;
+        text-align: left;
+
+        @include breakpoint (md) {
+            padding: 0;
+
+        }
+
+        h2 {
+            color: $bg-color;
+        }
+    }
+
+    .testimony-content {
+        margin-top: 0;
+        display: flex;
+        flex-direction: row;
+        column-gap: $space-xxxl;
+
+        @include breakpoint(md) {
+            max-width: 900px;
+            column-gap: $space-lg;
+            margin-top: $space-lg;
+        }
+
+        @include breakpoint(sm) {
+            max-width: 550px;
+            column-gap: $space-md;
+            margin-top: $space-md;
+        }
+
+        .testimony-image {
+            display: block;
+            flex: 1 0 40%;
+            width: 300px;
+            height: 355px;
+            border-radius: $space-sm;
+            background-size: cover;
+            background-color: $secondary-color;
+
+            @include breakpoint(md) {
+                min-width: 250px;
+                width: 300px;
+                height: 300px;
+            }
+
+            @include breakpoint(sm) {
+                flex: 1 0 30%;
+                min-width: 100px;
+                width: 100px;
+                height: 150px;
+            }
+        }
+
+        .testimony-text {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-size: 2rem;
+                color: $secondary-color;
+
+                @include breakpoint(md) {
+                    font-size: 1.5rem;
+                }
+                @include breakpoint(sm) {
+                    font-size: 1rem;
+                }
+            }
+
+            .left-quote {
+                margin-left: -15px;
+                margin-bottom: 5px;
+            }
+
+            .right-quote {
+                align-self: flex-end;
+            }
+
+            .testimony-person {
+                .title {
+                    @include breakpoint (md) {
+                        font-size: 0.875rem;
+                        font-weight: 400;
+                        margin-bottom: $space-xs
+                    }
+
+                    @include breakpoint (sm) {
+                        font-size: 0.75rem;
+                        font-weight: 400;
+                        margin-bottom: $space-xs
+                    }
+                }
+            }
+
+            .navigation {
+                align-self: flex-end;
+                display: flex;
+                gap: $space-sm;
+            }
+        }
+    }
+}
