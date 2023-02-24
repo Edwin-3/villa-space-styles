@@ -86,9 +86,9 @@ h1 {
 h2 {
   font-size: 2em;
   line-height: $line-height;
-  font-weight: 600;
+  font-weight: 400;
   color: $secondary-bg-color;
-  font-family: $font-family-01;
+  font-family: $font-family-02;
   margin: 0;
   @include breakpoint(sm) {
     font-size: 1.25em;

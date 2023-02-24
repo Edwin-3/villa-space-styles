@@ -1,12 +1,21 @@
 import React from 'react'
 import './discuss.scss'
+import { TiTick } from 'react-icons/ti'
 
 const Discuss = () => {
+    const discussData = ["Free Consultation", "Budget Quotations", "Latest Technologies", "Eco Friendly Constructions"]
     return (
         <div className='discuss-section'>
             <div className='discuss-content'>
-                <h2>Discuss for a cool Project!</h2>
-                <p>Tired of lengthy and frustrating design processes? We have made quality our habit, it's not something we strive for - we live by</p>
+                <h5>Founder</h5>
+                <h2>Let's discuss your spaces!</h2>
+                <p>Tired of lengthy and frustrating design processes? We would love to hear about your project, please feel free to contact us.</p>
+                {discussData.map((item, index) => (
+                    <div className='discuss-icon'>
+                        <TiTick />
+                        <h6 key={index}>{item}</h6>
+                    </div>
+                ))}
                 <button className='btn primary'>Send Inquiry</button>
             </div>
             <div className='discuss-img'>

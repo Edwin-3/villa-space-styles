@@ -1,0 +1,170 @@
+@use '../components/styles.scss' as *;
+
+$secondary-color: #999;
+
+$breakpoint-small: 768px;
+
+.contact-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  padding: $space-xxl 0;
+  height: 90vh;
+
+  @include breakpoint(sm) {
+    padding: $space-xxl 0 0;
+
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: $space-md;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    background-color: #4c4c4c;
+    height: auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: $space-sm;
+    transition: transform 0.3s ease-in-out;
+
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .contact-wrapper.slide-out form {
+    transform: translateX(-100%);
+  }
+
+  .contact-wrapper.slide-out .socials {
+    transform: translateX(0);
+  }
+
+  .contact-wrapper.slide-out {
+    transform: translateX(calc(-100% + 160px));
+  }
+
+  form {
+    width: 75%;
+    padding: $space-lg $space-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoint(sm) {
+      padding: $space-sm $space-sm ;
+      width: 86%;
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      align-self: center;
+    }
+
+    h4 {
+      margin-bottom: $space-md;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: $secondary-bg-color;
+      font-family: $font-family-02;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 96%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 1.5rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .form-error-message {
+      color: red;
+      margin-top: 0.5rem;
+    }
+
+    .form-success-message {
+      color: green;
+      margin-top: 0.5rem;
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .social-handles-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: url('../../public/assets/img03.jpg') no-repeat center center/cover;
+    border-radius: 0 $space-sm $space-sm 0;
+    height: 530px;
+
+    //overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); // change the opacity as needed
+      z-index: 1;
+      border-radius: 0 $space-sm $space-sm 0;
+    }
+
+    a {
+      display: block;
+      margin: 0 1rem;
+      color: #333;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #666;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

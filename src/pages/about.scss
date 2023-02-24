@@ -1,0 +1,145 @@
+@use '../components/styles.scss' as *;
+
+.about-container {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about-block {
+        height: 300px;
+        width: 100%;
+        background-color: #666666;
+
+        @include breakpoint(sm) {
+            display: none;
+        }
+    }
+
+    .about-body {
+        background-color: #4c4c4c;
+        height: auto;
+        width: 90%;
+        max-width: 1000px;
+        margin: -120px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: $space-sm;
+        border-radius: $space-sm;
+
+
+        @include breakpoint(sm) {
+            padding: $space-sm;
+        }
+
+        .about-heading {
+            text-align: center;
+            margin-top: $space-lg;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: row;
+            column-gap: $space-md;
+            row-gap: $space-lg;
+            padding: $space-md;
+
+            @include breakpoint(md) {
+                flex-direction: row;
+            }
+
+
+            @include breakpoint(sm) {
+                flex-direction: column;
+                margin-top: $space-xxl;
+                padding: 0;
+
+            }
+        }
+
+        .about-text {
+            flex: 1 0 40%;
+            gap: $space-md;
+
+            p {
+                margin: $space-md 0;
+
+                @include breakpoint(sm) {
+                    margin: $space-sm 0;
+
+                }
+            }
+
+            button {
+                margin-block: 0;
+
+                @include breakpoint(sm) {
+                    margin-block: $space-lg;
+
+                }
+            }
+        }
+
+        .about-img {
+            flex: 1 0 35%;
+            width: 100%;
+            height: 530px;
+            
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: $space-sm;
+
+            }
+        }
+    }
+
+    .about-values {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        width: 90%;
+        margin: $space-xxl auto;
+        gap: $space-md;
+        justify-content: center;
+
+        @include breakpoint(sm) {
+            margin: $space-md 0;
+            justify-content: flex-start;
+        }
+
+        .value-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $secondary-color;
+            border-radius: $space-sm;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            height: 200px;
+
+
+
+            @include breakpoint(sm) {
+                width: 200px;
+                height: 200px;
+                margin: $space-sm
+            }
+
+            .icon {
+                font-size: 40px;
+                margin-bottom: $space-sm;
+                color: $primary-color;
+            }
+
+            h5 {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
