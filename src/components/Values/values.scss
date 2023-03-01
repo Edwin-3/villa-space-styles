@@ -1,54 +1,71 @@
 @use '../styles.scss' as *;
+$values-card-padding: $space-lg $space-sm $space-md $space-md;
 
-.tester-section {
-    padding: $space-xl 120px;
+
+.values-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $space-xl 0;
     background-color: $bg-color;
     overflow: hidden;
+    padding-left: $space-xxxl;
+    padding-right: $space-sm;
+
 
     @include breakpoint(md) {
-        padding: $space-lg $space-xl;
+        padding-left: $space-xl;
     }
 
     @include breakpoint(sm) {
-        padding: $space-lg $space-sm;
+        padding-left: $space-sm;
     }
 
     .service-heading {
         margin-bottom: $space-md;
+        width: 100%;
     }
 
-    .service-card-wrapper {
+    .values-card-wrapper {
         max-width: 1200px;
-        width: 1200px;
+        width: 100%;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
-        column-gap: $space-sm;
-        overflow-x: scroll;
-        &::-webkit-scrollbar{
+        gap: $space-sm;
+
+        &::-webkit-scrollbar {
             display: none;
         }
 
-
         @include breakpoint(md) {
-            overflow-x: scroll;
             gap: $space-sm;
+            flex-wrap: wrap;
         }
 
         @include breakpoint(sm) {
             width: 100%;
-            flex-direction: column;
             gap: $space-sm;
         }
 
-        .service-card {
-            padding: $space-lg $space-sm $space-md $space-md;
+        .values-card {
+            width: calc((100% - 45px) / 4);
+            padding: $values-card-padding;
             border: 1px solid $secondary-color;
             border-radius: $space-sm;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 325px;
+
+            @include breakpoint(md) {
+                width: calc((100% - 30px) / 3);
+
+            }
 
             @include breakpoint(sm) {
-                max-width: 345px;
+                padding: $space-md;
+                min-width: 220px;
+
             }
 
             .icon {

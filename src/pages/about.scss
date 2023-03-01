@@ -52,7 +52,7 @@
 
 
             @include breakpoint(sm) {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 margin-top: $space-xxl;
                 padding: 0;
 
