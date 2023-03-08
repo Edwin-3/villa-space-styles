@@ -1,0 +1,37 @@
+@use '../components/styles.scss' as *;
+
+.project-body {
+    min-height: 100vh;
+    padding-top: $space-xxxl;
+    padding-inline: $space-md;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        svg{
+            font-size: $space-md;
+            color: $secondary-bg-color;
+        }
+
+        h5 {
+            margin-bottom: $space-md;
+            color: $secondary-bg-color;
+            letter-spacing: 0.09em;
+            text-transform: none;
+            font-family: $font-family-02;
+        }
+    }
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $space-sm;
+}
+
+.image-list img {
+    max-width: 100%;
+    height: auto;
+}

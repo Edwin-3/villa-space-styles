@@ -42,17 +42,13 @@ function ResponsiveCarousel() {
     };
 
     const images = [
-        '/assets/img01.jpg',
-        '/assets/img02.jpg',
-        '/assets/img03.jpg',
-        '/assets/img01.jpg',
-        '/assets/img02.jpg',
-        '/assets/img03.jpg',
-    ];
-
-
-
-
+        '/assets/villaImg01.jpg',
+        '/assets/villaImg02.jpg',
+        '/assets/villaImg03.jpg',
+        '/assets/villaImg04.jpg',
+        '/assets/villaImg05.jpg',
+        '/assets/villaImg06.jpg',
+    ]
 
     return (
         <div className="carousel-wrapper">
