@@ -35,25 +35,12 @@ $breakpoint-small: 768px;
     width: 90%;
     max-width: 1000px;
     border-radius: $space-sm;
-    transition: transform 0.3s ease-in-out;
 
 
     @include breakpoint(sm) {
       flex-direction: column;
       width: 100%;
     }
-  }
-
-  .contact-wrapper.slide-out form {
-    transform: translateX(-100%);
-  }
-
-  .contact-wrapper.slide-out .socials {
-    transform: translateX(0);
-  }
-
-  .contact-wrapper.slide-out {
-    transform: translateX(calc(-100% + 160px));
   }
 
   form {

@@ -12,7 +12,7 @@ const Testimony = () => {
             </div>
             <div className='testimony-content'>
                 <div className='testimony-image'>
-                    <img alt='testimony_img'/>
+                    <img src='/assets/int001.jpeg' alt='testimony_img'/>
                 </div>
                 <div className='testimony-text'>
                     <FaQuoteLeft className='left-quote'/>
