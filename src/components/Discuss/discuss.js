@@ -19,7 +19,7 @@ const Discuss = () => {
                 <button className='btn primary'>Send Inquiry</button>
             </div>
             <div className='discuss-img'>
-                <img src='/assets/discuss-img.jpg' />
+                <img src='/assets/discuss-img.jpg' alt='discuss_img'/>
             </div>
         </div>
     )

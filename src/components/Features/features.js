@@ -36,7 +36,7 @@ const Features = () => {
             {section3Data.map((item, index) => {
                 return (
                     <div key={index} className='section03-content'>
-                        <div className='image'><img src={item.image} /></div>
+                        <div className='image'><img src={item.image} alt='section_img' /></div>
                         <div className='section03-text'>
                             <h3>{item.title}</h3>
                             <p>{item.describe} </p>

@@ -91,7 +91,6 @@ const Contact = () => {
           </div>
         </form>
         <div className="social-handles-container" ref={socialContainerRef} >
-
         </div>
       </div>
     </div>

@@ -57,7 +57,7 @@ const About = () => {
             <button className='btn primary'>Send an Inquiry</button>
           </div>
           <div className='about-img'>
-            <img src='/assets/villaImg02.jpg' />
+            <img src='/assets/villaImg02.jpg' alt='about_img'/>
           </div>
         </div>
 
