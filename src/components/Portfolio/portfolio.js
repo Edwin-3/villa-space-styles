@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
-import './portfolio.scss'
+import React from 'react';
+import './portfolio.scss';
 
 /* For creating carousel */
 import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
 
-import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'
-
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 
 function ResponsiveCarousel() {
-    const [currentSlide, setCurrentSlide] = useState(0);
     const settings = {
         dots: true,
         infinite: true,
@@ -38,7 +36,6 @@ function ResponsiveCarousel() {
                 }
             }
         ],
-        beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex)
     };
 
     const images = [
